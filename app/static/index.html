@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f6f2">
+  <title>Fieldnotes | Research report generator</title>
+  <link rel="stylesheet" href="/static/app.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Fieldnotes home">
+      <span class="brand-mark" aria-hidden="true">F</span>
+      <span>fieldnotes<span class="brand-period">.</span></span>
+    </a>
+    <span class="topbar-caption">AI RESEARCH STUDIO</span>
+    <div class="topbar-actions">
+      <a class="docs-link" href="/dashboard">Dashboard</a>
+      <a class="docs-link" href="/docs" target="_blank" rel="noreferrer">API docs <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">FROM QUESTION TO EVIDENCE</p>
+      <h1 id="page-title">Research, with its sources attached.</h1>
+      <p class="intro-copy">A five-agent workflow searches the web, shapes the evidence into a reviewed report, and prepares a cited PDF.</p>
+    </section>
+
+    <section class="workspace" aria-label="Create a research report">
+      <form id="research-form" class="research-form">
+        <label for="topic">What would you like to research?</label>
+        <textarea id="topic" name="topic" minlength="3" maxlength="300" rows="3" placeholder="For example: How are cities adapting to extreme heat?" required></textarea>
+        <div class="form-footer">
+          <span class="field-hint">Be specific for more focused sources.</span>
+          <button id="submit-button" type="submit"><span class="button-label">Create report</span><span aria-hidden="true">→</span></button>
+        </div>
+        <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+      </form>
+
+      <div class="workflow" aria-label="Report workflow">
+        <div class="workflow-step"><span class="step-number">01</span><span>Search the web</span></div>
+        <span class="step-divider" aria-hidden="true"></span>
+        <div class="workflow-step"><span class="step-number">02</span><span>Synthesize findings</span></div>
+        <span class="step-divider" aria-hidden="true"></span>
+        <div class="workflow-step"><span class="step-number">03</span><span>Review and export</span></div>
+      </div>
+    </section>
+
+    <section id="results" class="results" aria-labelledby="report-title" hidden>
+      <div class="result-topline">
+        <div>
+          <p class="eyebrow">COMPLETED REPORT</p>
+          <h2 id="report-title"></h2>
+        </div>
+        <a id="download-link" class="download-button" href="#" download><span aria-hidden="true">↓</span> Download PDF</a>
+      </div>
+      <div id="review-notes" class="review-notes" hidden></div>
+      <article id="report-content" class="report-content"></article>
+      <section class="sources-section" aria-labelledby="sources-title">
+        <h3 id="sources-title">Sources</h3>
+        <ol id="source-list"></ol>
+      </section>
+    </section>
+  </main>
+  <footer class="page-footer"><span>FIELDNOTES / RESEARCH REPORT GENERATOR</span><span>Sources are retrieved live for each report.</span></footer>
+</body>
+</html>

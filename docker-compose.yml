@@ -1,0 +1,18 @@
+services:
+  app:
+    image: fieldnotes:local
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "${FIELDNOTES_PORT:-8000}:8000"
+    volumes:
+      - reports:/app/output
+
+volumes:
+  reports:
+    name: fieldnotes-reports

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fieldnotes Dashboard</title>
+  <link rel="stylesheet" href="/static/dashboard.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">FLOW METRICS</p>
+        <h1>Research report dashboard</h1>
+      </div>
+      <a class="nav-link" href="/">Back to app</a>
+    </header>
+
+    <main class="dashboard-grid">
+      <article class="card accent">
+        <p class="label">Completed flows</p>
+        <div class="value" id="success-count">0</div>
+      </article>
+      <article class="card warn">
+        <p class="label">Failed flows</p>
+        <div class="value" id="error-count">0</div>
+      </article>
+      <article class="card neutral">
+        <p class="label">Average duration</p>
+        <div class="value" id="avg-duration">0s</div>
+      </article>
+    </main>
+
+    <section class="card table-card">
+      <div class="table-heading">
+        <h2>Flow summary</h2>
+        <span id="status-pill" class="status-pill">Waiting</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Successful workflows</td>
+            <td id="success-row">0</td>
+          </tr>
+          <tr>
+            <td>Failed workflows</td>
+            <td id="error-row">0</td>
+          </tr>
+          <tr>
+            <td>Average completion time</td>
+            <td id="avg-row">0s</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <script src="/static/dashboard.js" defer></script>
+</body>
+</html>
